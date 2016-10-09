@@ -18,15 +18,7 @@
 				html.style.fontSize = pageWidth / 16 + 'px';
 			}
 			
-			window.addEventListener("touchmove",function(){
-				
-				if(document.body.scrollTop>100){
-					document.getElementById('head-nav').style.backgroundColor = "#db3a34";
-				}else{
-					document.getElementById('head-nav').style.backgroundColor = "";
-				}
-				
-			});
+			
 		</script>
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="#3b9bff">
@@ -115,6 +107,14 @@
 				}
 				nav[now%nav.length].className = "active";
 			}
+			window.addEventListener("touchmove",function(){
+				console.log(document.body.scrollTop);
+				if(document.body.scrollTop>100){
+					document.getElementById('head-nav').style.backgroundColor = "#db3a34";
+				}else{
+					document.getElementById('head-nav').style.backgroundColor = "";
+				}
+			});
 		};
 		</script>
 		
