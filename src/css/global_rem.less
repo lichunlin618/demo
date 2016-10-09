@@ -103,15 +103,17 @@ input {
 //  margin: 20/@rem 16/@rem;
     margin-top: 20/@rem;
     margin-bottom: 20/@rem;
+    // 这里采用了弹性布局
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
     .nav_items {
-        float: left;
         width: 96/@rem;
         height: 130/@rem;
-        margin-left: 33/@rem;
-        margin-right: 19/@rem;
-        margin-top: 22/@rem;
-        margin-bottom: 22/@rem;
-        
+        margin: 20/@rem;
         span {
             display: block;
             width: 96/@rem;
@@ -684,13 +686,16 @@ input {
             .mjza {
                 width: 608/@rem;
                 height: 323/@rem;
-                
+                    // 这里采用了弹性布局
+                    display: flex;
+                    flex-direction: row; 
+                    justify-content: space-around;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    align-content: space-around;
                 .product {
                     width: 192/@rem;
                     height: 323/@rem;
-                    margin-top: 9/@rem;
-                    
-                    margin-right: 10/@rem;
                     div:nth-child(1){
                         margin-top: 6/@rem;
                         width: 192/@rem;
@@ -958,7 +963,6 @@ input {
                     }
                 }
             }
-            
         }
     }
 }
@@ -995,10 +999,16 @@ input {
     width: 608/@rem;
     height: 232/@rem;
     margin: 0 16/@rem;
+    // 这里采用了弹性布局
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: space-around;
     .l{
         width: 192/@rem;
         height: 232/@rem;
-        margin-right: 15/@rem;
         background-color: #55b5ec;
         span {
             display: block;
@@ -1020,13 +1030,11 @@ input {
             font-size: 20/@rem;
             color: #FFFFFF;
             text-align: center;
-            
         }
     }
     .m {
         width: 192/@rem;
         height: 232/@rem;
-        margin-right: 15/@rem;
         background-color: #ff656a;
         span {
             display: block;
@@ -1048,7 +1056,6 @@ input {
             font-size: 20/@rem;
             color: #FFFFFF;
             text-align: center;
-            
         }
     }
     .r {
@@ -1077,7 +1084,6 @@ input {
             font-size: 20/@rem;
             color: #FFFFFF;
             text-align: center;
-            
         }
     }
 }
