@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			// 一比一像素的还原
+			var pixclPatio      = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixclPatio+',minimum-scale='+pixclPatio+',maximum-scale='+pixclPatio+',user-scalable=no" />');
+			
+			setRem();
+			window.addEventListener("orientationchange", setRem);
+			window.addEventListener("resize", setRem);
+			// 适配每个设备下的rem单位
+			function setRem(){
+				var html            = document.getElementsByTagName('html')[0];
+				var pageWidth       = html.getBoundingClientRect().width;
+				html.style.fontSize = pageWidth / 16 + 'px';
+			}
+		</script>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#3b9bff">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="src/css/global_rem.css" />
+		
+		<style id="css"></style>
+		<script src="src/js/transform.js"></script>
+		<script>
+		
+		window.onload = function (){
+			var wrap = document.querySelector("#wrap");
+			var list = document.querySelector("#list");
+			list.innerHTML += list.innerHTML;
+			var lis = document.querySelectorAll("#list li");
+			var css = document.querySelector("#css");
+			var nav = document.querySelectorAll("#nav span");
+			var style = "#wrap{height:"+ lis[0].offsetHeight+"px}";
+			var timer = 0;
+			style+="#list{width:"+lis.length+"00%}";
+			style+="#list li{width:"+(1/lis.length*100)+"%}"
+			css.innerHTML+= style;
+			var startPoint = 0;
+			var startX = 0;
+			var now = 0;
+			cssTransform(list,"translateX",0);
+			auto();
+			wrap.addEventListener(
+				"touchstart",
+				function(e) {
+					clearInterval(timer);
+					list.style.transition = "none";
+					var translateX = cssTransform(list,"translateX");
+					now = Math.round(-translateX / wrap.offsetWidth);
+					if(now == 0) {
+						now = nav.length;
+					}
+					if(now == lis.length-1) {
+						now = nav.length-1;
+					}
+					cssTransform(list,"translateX",-now * wrap.offsetWidth);
+					startPoint = e.changedTouches[0].pageX;
+					startX = cssTransform(list,"translateX");
+				}
+			);
+			wrap.addEventListener(
+				"touchmove",
+				function(e) {
+					var nowPoint = e.changedTouches[0].pageX;
+					var dis = nowPoint - startPoint;
+					cssTransform(list,"translateX",startX + dis);
+				}
+			);
+			wrap.addEventListener(
+				"touchend",
+				function(e) {
+					var translateX = cssTransform(list,"translateX");
+					now = Math.round(-translateX / wrap.offsetWidth);
+					tab();
+					auto();
+				}
+			);
+			function auto() {
+				clearInterval(timer);
+				timer = setInterval(
+					function() {
+						if(now == lis.length-1) {
+							now = nav.length-1;
+						}
+						list.style.transition = "none";
+						cssTransform(list,"translateX",-now * wrap.offsetWidth);
+						setTimeout(
+							function () {
+								now++;
+								tab();	
+							},30
+						);
+					},2000
+				);
+			}
+			function tab() {
+				list.style.transition = ".5s";
+				cssTransform(list,"translateX",-now * wrap.offsetWidth);
+				for(var i = 0 ; i < nav.length; i++) {
+					nav[i].className = "";
+				}
+				nav[now%nav.length].className = "active";
+			}
+		};
+		</script>
+		
+	</head>
+	<body>
+		<section class="header">
+			<!-- 轮播banner -->
+			<div id="wrap">
+				<ul id="list" class="banner">
+			    	<li class="items">
+			        	<a href="#">
+			            	<img src="src/images/banner-1.jpg" />
+			            </a>
+			        </li>
+			        <li>
+			        	<a href="#">
+			            	<img src="src/images/banner-3.jpg" />
+			            </a>
+			        </li>
+			    </ul>
+			    <nav id="nav">
+			    	<span class="active"></span>
+			        <span></span>
+			    </nav>
+			</div>
+			<!-- 菜单 -->
+			<div class="nav">
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav1.png" alt="" />
+					</span>
+					<strong>热销宝贝</strong>
+				</a>
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav2.png" alt="" />
+					</span>
+					<strong>新品上架</strong>
+				</a>
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav3.png" alt="" />
+					</span>
+					<strong>特价促销</strong>
+				</a>
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav4.png" alt="" />
+					</span>
+					<strong>所有宝贝</strong>
+				</a>
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav5.png" alt="" />
+					</span>
+					<strong>精致灯品</strong>
+				</a>
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav6.png" alt="" />
+					</span>
+					<strong>生活用品</strong>
+				</a>
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav7.png" alt="" />
+					</span>
+					<strong>创意家居</strong>
+				</a>
+				<a href="#" class="nav_items">
+					<span>
+						<img src="src/images/nav8.png" alt="" />
+					</span>
+					<strong>礼品专区</strong>
+				</a>
+			</div>
+			<div class="bgcolor"></div>
+			<!-- 创意推荐 -->
+			<div class="cytj">
+				<div class="tit">
+					<div class="title fl">
+						<div>
+							创<span src="red">意</span>推<span class="blue">荐</span>
+						</div>
+						<div></div>
+						<div>WELCOME TO HAVE PLEASANT SHOPPING</div>
+					</div>
+					<div class="more fl">
+						<a href="#">MORE...</a>
+					</div>
+				</div>
+				<div class="main">
+					<div class="product fl">
+						<a href="#">
+							<div>
+								<img src="src/images/product1.jpg" alt="" />
+							</div>
+							<div>
+								生日礼物儿童幼儿园送女男实用创
+							</div>
+							<div>
+								￥98
+							</div>
+							<div>
+								立即购买
+							</div>
+						</a>
+					</div>
+					<div class="product fl">
+						<a href="#">
+							<div>
+								<img src="src/images/product2.jpg" alt="" />
+							</div>
+							<div>
+								生日礼物儿童幼儿园送女男实TT用创
+							</div>
+							<div>
+								￥98
+							</div>
+							<div>
+								立即购买
+							</div>
+						</a>
+					</div>
+					<div class="product fl">
+						<a href="#">
+							<div>
+								<img src="src/images/product3.jpg" alt="" />
+							</div>
+							<div>
+								生日礼物儿童幼儿园送女男实用创
+							</div>
+							<div>
+								￥98
+							</div>
+							<div>
+								立即购买
+							</div>
+						</a>
+					</div>
+					<div class="product fl">
+						<a href="#">
+							<div>
+								<img src="src/images/product4.jpg" alt="" />
+							</div>
+							<div>
+								生日礼物儿童幼儿园送女男实用创
+							</div>
+							<div>
+								￥98
+							</div>
+							<div>
+								立即购买
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="bgcolor"></div>			
+			<!-- 优惠券 -->
+			<div class="yhq">
+				<ul class="box">
+					<li>
+						<a href="#">
+							<span>￥</span>
+							<span>20</span>
+							<span>
+								<div>元</div>
+								<div>点击领取</div>
+							</span>
+						</a>	
+					</li>
+					<li>
+						<a href="#">
+							<span>￥</span>
+							<span>20</span>
+							<span>
+								<div>元</div>
+								<div>点击领取</div>
+							</span>
+						</a>	
+					</li>
+					<li>
+						<a href="#">
+							<span>￥</span>
+							<span>20</span>
+							<span>
+								<div>元</div>
+								<div>点击领取</div>
+							</span>
+						</a>	
+					</li>
+				</ul>
+			</div>
+			<div class="bgcolor"></div>	
+			<!-- 人气精选 -->
+			<div class="rqjx">
+				<div class="tit">
+					<div class="title fl">
+						<div>
+							人<span class="red">气</span>精<span class="blue">选</span>
+						</div>
+						<div></div>
+						<div>WELCOME TO HAVE PLEASANT SHOPPING</div>
+					</div>
+					<div class="more fl">
+						<a href="#">MORE...</a>
+					</div>
+				</div>
+				<div class="main">
+					
+				</div>
+			</div>
+			<!-- 创意推荐 -->
+			<div class="cytj">
+				<div class="tit">
+					<div class="title fl">
+						<div>
+							创<span class="red">意</span>推<span class="blue">荐</span>
+						</div>
+						<div></div>
+						<div>WELCOME TO HAVE PLEASANT SHOPPING</div>
+					</div>
+					<div class="more fl">
+						<a href="#">MORE...</a>
+					</div>
+				</div>
+				<div class="main">
+					<div class="product_lp fl">
+						<a href="#">
+							<div>
+								<img src="src/images/lp.jpg" alt="" />
+							</div>
+						</a>
+					
+						<div class="product">
+							<a href="#">
+								<div>
+									<img src="src/images/product1.jpg" alt="" />
+								</div>
+								<div>
+									生日礼物儿童幼儿园送女男实用创
+								</div>
+								<div>
+									<span>￥98</span>
+									<span>BUY NOW</span>
+								</div>
+							</a>
+						</div>
+						
+						<div class="product">
+							<a href="#">
+								<div>
+									<img src="src/images/product2.jpg" alt="" />
+								</div>
+								<div>
+									生日礼物儿童幼儿园送女男实用创
+								</div>
+								<div>
+									<span>￥98</span>
+									<span>BUY NOW</span>
+								</div>
+							</a>
+						</div>
+						
+					</div>
+					<div class="product_duo fl">
+						
+						<div class="product">
+							<a href="#">
+								<div>
+									<img src="src/images/product3.jpg" alt="" />
+								</div>
+								<div>
+									生日礼物儿童幼儿园送女男实用创
+								</div>
+								<div>
+									<span>￥98</span>
+									<span>BUY NOW</span>
+								</div>
+							</a>
+						</div>
+						
+						<div class="product">
+							<a href="#">
+								<div>
+									<img src="src/images/product4.jpg" alt="" />
+								</div>
+								<div>
+									生日礼物儿童幼儿园送女男实用创
+								</div>
+								<div>
+									<span>￥98</span>
+									<span>BUY NOW</span>
+								</div>
+							</a>
+						</div>
+						
+						<a href="#">
+							<div>
+								<img src="src/images/duo.jpg" alt="" />
+							</div>
+						</a>
+						
+					</div>
+				</div>
+			</div>
+			<div class="bgcolor"></div>	
+			<!-- 广告banner -->
+			<div class="banner_middle">
+				<a href="#">
+					<img src="src/images/banner-2.jpg"/>
+				</a>
+			</div>
+			<!-- 宝贝排行 -->
+			<div class="bbph">
+				<div class="tit">
+					<div class="title fl">
+						<div>
+							宝<span class="red">贝</span>排<span class="blue">行</span>
+						</div>
+						<div></div>
+						<div>WELCOME TO HAVE PLEASANT SHOPPING</div>
+					</div>
+					<div class="more fl">
+						<a href="#">MORE...</a>
+					</div>
+				</div>
+				<div class="main">
+					<div class="header">
+						<ul>
+							<li>
+								<a href="#" class="red">买家最爱</a>
+							</li>
+							<li>
+								<a href="#">销量排行</a>
+							</li>
+							<li>
+								<a href="#">收藏排行</a>
+							</li>
+						</ul>
+					</div>
+					<div class="body">
+						<div class="mjza">
+							<div class="product fl">
+								<a href="#">
+									<div>
+										<img src="src/images/product1.jpg" alt="" />
+									</div>
+									<div>
+										生日礼物儿
+									</div>
+									<div>
+										￥165.00
+									</div>
+									<div>
+										立即购买
+									</div>
+								</a>
+							</div>
+							<div class="product fl">
+								<a href="#">
+									<div>
+										<img src="src/images/product1.jpg" alt="" />
+									</div>
+									<div>
+										生日礼物儿
+									</div>
+									<div>
+										￥165.00
+									</div>
+									<div>
+										立即购买
+									</div>
+								</a>
+							</div>
+							<div class="product fl">
+								<a href="#">
+									<div>
+										<img src="src/images/product1.jpg" alt="" />
+									</div>
+									<div>
+										生日礼物儿
+									</div>
+									<div>
+										￥165.00
+									</div>
+									<div>
+										立即购买
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="xlph">
+							1
+						</div>
+						<div class="scph">
+							2
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bgcolor"></div>	
+			<!-- 广告banner -->
+			<div class="banner_middle">
+				<a href="#">
+					<img src="src/images/banner-3.jpg"/>
+				</a>
+			</div>
+			<!-- 菜单 -->
+			<div class="navs">
+				<ul>
+					<li>
+						<a href="#">餐饮用具</a>
+					</li>
+					<li>
+						<a href="#">收纳整理</a>
+					</li>
+					<li>
+						<a href="#">家具灯品</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">装饰摆件</a>
+					</li>
+					<li>
+						<a href="#">纯棉用品</a>
+					</li>
+					<li>
+						<a href="#">卧室闹钟</a>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<a href="#">创意百货</a>
+					</li>
+					<li>
+						<a href="#">礼品专区</a>
+					</li>
+					<li>
+						<a href="#">所有宝贝</a>
+					</li>
+				</ul>
+			</div>
+			<div class="bgcolor"></div>
+			<!-- 创意 -->
+			<div class="product_hui">
+				<div class="product">
+					<a href="#">
+						<img src="src/images/product1.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+					<a href="#">
+						<img src="src/images/product2.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+					<a href="#">
+						<img src="src/images/product3.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+					<a href="#">
+						<img src="src/images/product4.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+					<a href="#">
+						<img src="src/images/cy.jpg" alt="" />
+					</a>
+					<a href="#">
+						<img src="src/images/product1.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+					<a href="#">
+						<img src="src/images/product2.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+					<a href="#">
+						<img src="src/images/product3.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+					<a href="#">
+						<img src="src/images/product4.jpg" alt="" />
+						<span>￥192.00</span>
+					</a>
+				</div>
+			</div>
+			<div class="bgcolor"></div>
+			<!-- 特价促销 -->
+			<div class="tjcx">
+				<div class="tit">
+					<div class="title fl">
+						<div>
+							特<span class="red">价</span>促<span class="blue">销</span>
+						</div>
+						<div></div>
+						<div>WELCOME TO HAVE PLEASANT SHOPPING</div>
+					</div>
+					<div class="more fl">
+						<a href="#">MORE...</a>
+					</div>
+				</div>
+				<div class="main">
+					<div class="section">
+						<dl>
+							<dt>
+								<img src="src/images/list1.jpg" />
+							</dt>
+							<dd>
+								<div>3.0折</div>
+								<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+								<div>
+									<a href="#">￥168.00</a>
+									<a href="#">已售:8</a>
+								</div>
+								<div>
+									<a href="#">
+										立即购买
+									</a>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="section">
+						<dl>
+							<dt>
+								<img src="src/images/list2.jpg" />
+							</dt>
+							<dd>
+								<div>3.0折</div>
+								<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+								<div>
+									<a href="#">￥168.00</a>
+									<a href="#">已售:8</a>
+								</div>
+								<div>
+									<a href="#">
+										立即购买
+									</a>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="section">
+						<dl>
+							<dt>
+								<img src="src/images/list3.jpg" />
+							</dt>
+							<dd>
+								<div>3.0折</div>
+								<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+								<div>
+									<a href="#">￥168.00</a>
+									<a href="#">已售:8</a>
+								</div>
+								<div>
+									<a href="#">
+										立即购买
+									</a>
+								</div>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+			<div class="bgcolor"></div>
+			<!-- 店铺公告 -->
+			<div class="about">
+				<div class="about_img">
+					<img src="src/images/about.jpg" alt="" />
+				</div>
+				<p>
+					这里是一些关于店铺公告的一些信息内容<br />
+					最新店铺活动等信息<br />
+					最新宝贝的优惠信息...<br />
+				</p>
+			</div>
+			<!-- 售后 -->
+			<div class="sh">
+				<div class="l fl">
+					<span>7</span>
+					<h3>七天退换货</h3>
+				</div>
+				<div class="m fl">
+					<span>正</span>
+					<h3>正品保证</>
+				</div>
+				<div class="r fl">
+					<span></span>
+					<h3>优质售后</h3>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
