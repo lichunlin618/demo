@@ -1118,6 +1118,7 @@ input {
   align-items: center;
   flex-wrap: wrap;
   align-content: space-around;
+  background-color: #db3a34;
 }
 .head-nav input {
   width: 15.2rem;
