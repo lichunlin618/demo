@@ -1049,6 +1049,9 @@ input {
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
+.bottom-nav-box {
+  margin-top: 2.275rem;
+}
 .bottom-nav-box .bottom-nav {
   position: fixed;
   width: 100%;
