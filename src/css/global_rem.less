@@ -1,0 +1,1083 @@
+/* LESS */
+//变量 定义rem大小，并设置单位
+@rem: 40rem;
+
+body, input, ul, dl,dt,dd, p, h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+input, img {
+     border: none;
+}
+
+body {
+    font-size: 20/@rem;
+    font-family: Arial,Helvetica,STHeiTi,sans-serif;
+
+}
+
+input {
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.fl{
+    float: left;
+}
+
+/* 处理兼容问题 */
+a{
+    // 取消a标签手指按下时出现的黑色遮罩层
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: #818788;
+}
+input {
+    // 解决IOS下表单元素圆角的问题
+    -webkit-appearance: none;
+}
+
+
+// 轮播banner
+.banner {
+    width: 100%;
+    height: 400/@rem;
+    .items {
+        float: left;
+        width: 100%;
+        height: 400/@rem;
+        img {
+            width: 100%;
+            height: 400/@rem;   
+        }
+    }
+}
+#wrap {
+    overflow: hidden;
+    position: relative;
+}
+#list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#list li {
+    float: left;
+}
+#list img {
+    width: 100%;
+    display: block;
+}
+#nav {
+    position: absolute;
+    left: 0;
+    bottom: 3/@rem;
+    width: 100%;
+    line-height: 10/@rem;
+    text-align: center;
+}
+#nav span {
+    display: inline-block;
+    width: 10/@rem;
+    height: 10/@rem;
+    background: #F3F0F0;
+    border-radius: 5/@rem;
+    margin: 0 2/@rem;
+}
+#nav .active {
+    background: #000;
+}
+
+// 菜单
+.nav {
+    width: 100%;
+    height: 387/@rem;
+// 问题：整体的左右移动 就会出现问题 手机上的页面可以左右移动了
+//  margin: 20/@rem 16/@rem;
+    margin-top: 20/@rem;
+    margin-bottom: 20/@rem;
+    .nav_items {
+        float: left;
+        width: 96/@rem;
+        height: 130/@rem;
+        margin-left: 33/@rem;
+        margin-right: 19/@rem;
+        margin-top: 22/@rem;
+        margin-bottom: 22/@rem;
+        
+        span {
+            display: block;
+            width: 96/@rem;
+            height: 96/@rem;
+            line-height: 96/@rem;
+            border-radius: 31/@rem;
+            background-color: #ff656a;
+            text-align: center;
+            img {
+                width: 40/@rem;
+                height: 47/@rem;
+                vertical-align: middle;
+            }
+        }
+        strong {
+            display: block;
+            font-size: 19/@rem;
+            margin-top: 15/@rem;
+            text-align: center;
+            color: #777777;
+        }
+    }
+    .nav_items:nth-child(2){
+        span {
+            background-color: #81d73d;
+        }
+    }
+    .nav_items:nth-child(3){
+        span {
+            background-color: #ffb11d;
+        }
+    }
+    .nav_items:nth-child(4){
+        span {
+            background-color: #55b5ec;
+        }
+    }
+    .nav_items:nth-child(5){
+        span {
+            background-color: #ffb11d;
+        }
+    }
+    .nav_items:nth-child(6){
+        span {
+            background-color: #55b5ec;
+        }
+    }
+    .nav_items:nth-child(7){
+        span {
+            background-color: #ff656a;
+        }
+    }
+    .nav_items:nth-child(8){
+        span {
+            background-color: #9087f1;
+        }
+    }
+}
+
+// 背景颜色
+.bgcolor {
+    width: 100%;
+    height: 16/@rem;
+    background-color: #f3f0f0;
+}
+
+// 创意推荐
+.cytj {
+    margin-top: 16/@rem;
+    width: 100%;
+    height: 100%;
+    .tit {
+        width: 608/@rem;
+        height: 74/@rem;
+        text-align: right;
+        margin-top: 44/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        margin-bottom: 22/@rem;
+        .title {
+            width: 415/@rem;
+            height: 74/@rem;
+            div:nth-child(1) {
+                width: 415/@rem;
+                height: 52/@rem;
+                font-size: 51/@rem;
+                .red {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #ff656a;
+                    border-radius: 29/@rem;
+                }
+                .blue {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #55b5ec;
+                    border-radius: 29/@rem;
+                }
+            }
+            div:nth-child(2) {
+                width: 415/@rem;
+                height: 14/@rem;
+            }
+            // 问题：怎么失效了 高度 不包含进去
+            div:nth-child(3) {
+                width: 415/@rem;
+                height: 8/@rem;
+                font-size: 8/@rem;
+            }
+        }
+        .more {
+            width: 193/@rem;
+            height: 74/@rem;
+            line-height: 74/@rem;
+            a {
+                display: block;
+                width: 193/@rem;
+                height: 74/@rem;
+                line-height: 74/@rem;
+            }
+        }
+    }
+    .main {
+        width: 608/@rem;
+        height: 100%;
+        margin-top: 12/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        overflow: hidden;
+        .product:nth-child(odd) {
+            margin-right: 15/@rem;
+        }
+        .product_lp {
+            width: 296/@rem;
+            height: 100%;
+            margin-right: 15/@rem;
+            div{
+                width: 296/@rem;
+                height: 240/@rem;
+                img {
+                    width: 296/@rem;
+                    height: 240/@rem;
+                    border-radius: 10/@rem;
+                }
+            }
+            .product {
+                margin-top: 10/@rem;
+                width: 296/@rem;
+                height: 415/@rem;
+                div:nth-child(1){
+                    width: 296/@rem;
+                    height: 296/@rem;
+                    img {
+                        width: 296/@rem;
+                        height: 296/@rem;
+                        border-radius: 10/@rem;
+                    }
+                }
+                div:nth-child(2){
+                    margin-top: 19/@rem;
+                    width: 296/@rem;
+                    height: 18/@rem;
+                    font-size: 18/@rem;
+                    text-align: center;
+                }
+                div:nth-child(3){
+                    margin-top: 17/@rem;
+                    width: 296/@rem;
+                    height: 21/@rem;
+                    font-size: 21/@rem;
+                    color: #ff656a;
+                    text-align: center;
+                    span:nth-child(1) {
+                        display: inline-block;
+                        text-align: left;
+                        width: 166/@rem;
+                        height: 21/@rem;
+                    }
+                    span:nth-child(2) {
+                        display: inline-block;
+                        width: 104/@rem;
+                        height: 28/@rem;
+                        font-size: 14/@rem;
+                        background-color: #ff656a;
+                        margin: 0 auto;
+                        padding-top: 13/@rem;
+                        color: #FFFFFF;
+                    }
+                }
+                div:nth-child(4){
+                    width: 160/@rem;
+                    height: 40/@rem;
+                    font-size: 20/@rem;
+                    line-height: 40/@rem;
+                    background-color: #ff656a;
+                    text-align: center;
+                    margin: 0 auto;
+                    margin-top: 13/@rem;
+                    color: #FFFFFF;
+                }
+            }
+        }
+        .product_duo {
+            width: 296/@rem;
+            height: 240/@rem;
+            div{
+                width: 296/@rem;
+                height: 240/@rem;
+                img {
+                    width: 296/@rem;
+                    height: 240/@rem;
+                    border-radius: 10/@rem;
+                }
+            }
+            .product {
+                width: 296/@rem;
+                height: 415/@rem;
+                div:nth-child(1){
+                    width: 296/@rem;
+                    height: 296/@rem;
+                    img {
+                        width: 296/@rem;
+                        height: 296/@rem;
+                        border-radius: 10/@rem;
+                    }
+                }
+                div:nth-child(2){
+                    margin-top: 19/@rem;
+                    width: 296/@rem;
+                    height: 18/@rem;
+                    font-size: 18/@rem;
+                    text-align: center;
+                }
+                div:nth-child(3){
+                    margin-top: 17/@rem;
+                    width: 296/@rem;
+                    height: 21/@rem;
+                    font-size: 21/@rem;
+                    color: #ff656a;
+                    text-align: center;
+                    span:nth-child(1) {
+                        display: inline-block;
+                        text-align: left;
+                        width: 166/@rem;
+                        height: 21/@rem;
+                    }
+                    span:nth-child(2) {
+                        display: inline-block;
+                        width: 104/@rem;
+                        height: 28/@rem;
+                        font-size: 14/@rem;
+                        background-color: #ff656a;
+                        margin: 0 auto;
+                        padding-top: 13/@rem;
+                        color: #FFFFFF;
+                    }
+                }
+                div:nth-child(4){
+                    width: 160/@rem;
+                    height: 40/@rem;
+                    font-size: 20/@rem;
+                    line-height: 40/@rem;
+                    background-color: #ff656a;
+                    text-align: center;
+                    margin: 0 auto;
+                    margin-top: 13/@rem;
+                    color: #FFFFFF;
+                }
+            }
+        }
+        .product {
+            width: 296/@rem;
+            height: 451/@rem;
+            div:nth-child(1){
+                width: 296/@rem;
+                height: 296/@rem;
+                img {
+                    width: 296/@rem;
+                    height: 296/@rem;
+                    border-radius: 10/@rem;
+                }
+            }
+            div:nth-child(2){
+                margin-top: 19/@rem;
+                width: 296/@rem;
+                height: 18/@rem;
+                font-size: 18/@rem;
+                text-align: center;
+            }
+            div:nth-child(3){
+                margin-top: 17/@rem;
+                width: 296/@rem;
+                height: 21/@rem;
+                font-size: 21/@rem;
+                color: #ff656a;
+                text-align: center;
+                span:nth-child(1) {
+                    display: inline-block;
+                    text-align: left;
+                    width: 166/@rem;
+                    height: 21/@rem;
+                }
+                span:nth-child(2) {
+                    display: inline-block;
+                    width: 104/@rem;
+                    height: 28/@rem;
+                    font-size: 14/@rem;
+                    background-color: #ff656a;
+                    margin: 0 auto;
+                    padding-top: 13/@rem;
+                    color: #FFFFFF;
+                }
+            }
+            div:nth-child(4){
+                width: 160/@rem;
+                height: 40/@rem;
+                font-size: 20/@rem;
+                line-height: 40/@rem;
+                background-color: #ff656a;
+                text-align: center;
+                margin: 0 auto;
+                margin-top: 13/@rem;
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+// 优惠券
+.yhq {
+    width: 100%;
+    height: 176/@rem;
+    .box {
+        width: 100%;
+        height: 148/@rem;
+        margin: 13/@rem 0 15/@rem 0;
+        background-color: #55b5ec;
+        li {
+            float: left;
+            width: 192/@rem;
+            height: 104/@rem;
+            margin-top: 22/@rem;
+            margin-left: 16/@rem;
+            a {
+                display: block;
+                width: 192/@rem;
+                height: 104/@rem;
+                border-radius: 5/@rem;
+                background: url(../images/yhq1.png) no-repeat 0 0;
+                background-size: 48/@rem 50/@rem;
+                background-color: #FFFFFF;
+                padding-top: 35/@rem;
+                padding-left: 19/@rem;
+                box-sizing: border-box;
+               
+                    span:nth-child(1){
+                        display: inline-block;
+                        color: #ff656a;
+                        width: 14/@rem;
+                        height: 38/@rem;
+                        line-height: 38/@rem;
+                        font-size: 14/@rem;
+                        font-weight: bold;
+                    }
+                    span:nth-child(2){
+                        display: inline-block;
+                        color: #ff656a;
+                        width: 38/@rem;
+                        height: 38/@rem;
+                        line-height: 38/@rem;
+                        font-size: 38/@rem;
+                    }
+                    span:nth-child(3){
+                        display: inline-block;
+                        width: 60/@rem;
+                        height: 38/@rem;
+                        font-size: 13/@rem;
+                        margin-left: 5/@rem;
+                    }
+               
+            }
+        }
+    }
+}
+
+// 人气精选
+.rqjx {
+    margin-top: 16/@rem;
+    width: 100%;
+    height: 100%;
+    .tit {
+        width: 608/@rem;
+        height: 74/@rem;
+        text-align: right;
+        margin-top: 44/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        margin-bottom: 22/@rem;
+        .title {
+            width: 415/@rem;
+            height: 74/@rem;
+            div:nth-child(1) {
+                width: 415/@rem;
+                height: 52/@rem;
+                font-size: 51/@rem;
+                .red {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #ff656a;
+                    border-radius: 29/@rem;
+                }
+                .blue {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #55b5ec;
+                    border-radius: 29/@rem;
+                }
+            }
+            div:nth-child(2) {
+                width: 415/@rem;
+                height: 14/@rem;
+            }
+            // 问题：怎么失效了 高度 不包含进去
+            div:nth-child(3) {
+                width: 415/@rem;
+                height: 8/@rem;
+                font-size: 8/@rem;
+            }
+        }
+        .more {
+            width: 193/@rem;
+            height: 74/@rem;
+            line-height: 74/@rem;
+            a {
+                display: block;
+                width: 193/@rem;
+                height: 74/@rem;
+                line-height: 74/@rem;
+            }
+        }
+    }
+    .main {
+        width: 608/@rem;
+        height: 696/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        background: url(../images/imgs1.jpg) no-repeat 0 0;
+        background-size: 608/@rem 696/@rem;
+    }
+}
+
+// 中间部分的广告banner
+.banner_middle {
+    margin-top: 20/@rem;
+    width: 100%;
+    height: 360/@rem;
+    img {
+        width: 100%;
+        height: 360/@rem;
+    }
+}
+// 宝贝排行
+.bbph {
+    margin-top: 16/@rem;
+    width: 100%;
+    height: 100%;
+    .tit {
+        width: 608/@rem;
+        height: 74/@rem;
+        text-align: right;
+        margin-top: 44/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        margin-bottom: 22/@rem;
+        .title {
+            width: 415/@rem;
+            height: 74/@rem;
+            div:nth-child(1) {
+                width: 415/@rem;
+                height: 52/@rem;
+                font-size: 51/@rem;
+                .red {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #ff656a;
+                    border-radius: 29/@rem;
+                }
+                .blue {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #55b5ec;
+                    border-radius: 29/@rem;
+                }
+            }
+            div:nth-child(2) {
+                width: 415/@rem;
+                height: 14/@rem;
+            }
+            // 问题：怎么失效了 高度 不包含进去
+            div:nth-child(3) {
+                width: 415/@rem;
+                height: 8/@rem;
+                font-size: 8/@rem;
+            }
+        }
+        .more {
+            width: 193/@rem;
+            height: 74/@rem;
+            line-height: 74/@rem;
+            a {
+                display: block;
+                width: 193/@rem;
+                height: 74/@rem;
+                line-height: 74/@rem;
+            }
+        }
+    }
+    .main {
+        width: 608/@rem;
+        height: 379/@rem;
+        margin-top: 25/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        .header {
+            width: 608/@rem;
+            height: 56/@rem;
+            ul {
+                border: 1px solid #cccccc;
+                overflow: hidden;
+                li {
+                    float: left;
+                    width: 202/@rem;
+                    height: 56/@rem;
+                    a {
+                        display: block;
+                        width: 202/@rem;
+                        height: 56/@rem;
+                        line-height: 56/@rem;
+                        font-size: 19/@rem;
+                        text-align: center;
+                    }
+                    .red {
+                        color: #FFFFFF;
+                        background-color: #ff656a;
+                    }
+                }
+            }
+        }
+        .body {
+            width: 608/@rem;
+            height: 323/@rem;
+            .mjza {
+                width: 608/@rem;
+                height: 323/@rem;
+                
+                .product {
+                    width: 192/@rem;
+                    height: 323/@rem;
+                    margin-top: 9/@rem;
+                    
+                    margin-right: 10/@rem;
+                    div:nth-child(1){
+                        margin-top: 6/@rem;
+                        width: 192/@rem;
+                        height: 192/@rem;
+                        img {
+                            width: 192/@rem;
+                            height: 192/@rem;
+                            border-radius: 10/@rem;
+                        }
+                    }
+                    div:nth-child(2){
+                        margin-top: 10/@rem;
+                        width: 192/@rem;
+                        height: 18/@rem;
+                        font-size: 18/@rem;
+                        text-align: center;
+                    }
+                    div:nth-child(3){
+                        margin-top: 6/@rem;
+                        width: 192/@rem;
+                        height: 21/@rem;
+                        font-size: 21/@rem;
+                        color: #ff656a;
+                        text-align: center;
+                        span:nth-child(1) {
+                            display: inline-block;
+                            text-align: left;
+                            width: 166/@rem;
+                            height: 21/@rem;
+                        }
+                        span:nth-child(2) {
+                            display: inline-block;
+                            width: 104/@rem;
+                            height: 28/@rem;
+                            font-size: 14/@rem;
+                            background-color: #ff656a;
+                            margin: 0 auto;
+                            padding-top: 13/@rem;
+                            color: #FFFFFF;
+                        }
+                    }
+                    div:nth-child(4){
+                        width: 160/@rem;
+                        height: 40/@rem;
+                        font-size: 20/@rem;
+                        line-height: 40/@rem;
+                        background-color: #ff656a;
+                        text-align: center;
+                        margin: 0 auto;
+                        margin-top: 13/@rem;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+            .xlph {
+                display: none;
+            }
+            .scph {
+                display: none;
+            }
+        }
+    }
+}
+
+// 菜单
+.navs {
+    width: 100%;
+    height: 205/@rem;
+    margin: 14/@rem 0;
+    ul {
+        width: 608/@rem;
+        height: 64/@rem;
+        border: 1px solid #ebe7e7;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        li {
+            float: left;
+            width: 202/@rem;
+            height: 64/@rem;
+            a {
+                display: block;
+                width: 202/@rem;
+                height: 64/@rem;
+                font-size: 20/@rem;
+                line-height: 64/@rem;
+                text-align: center;
+            }
+            
+        }
+    }
+    ul:nth-child(even) {
+        
+        background-color: #f3f0f0;
+           
+    }
+}
+
+// 创意产品
+.product_hui {
+    width: 100%;
+    height: 608/@rem;
+    .product {
+        width: 608/@rem;
+        height: 608/@rem;
+        margin: 12/@rem 16/@rem 6/@rem 16/@rem;
+        a {
+            display: inline-block;
+            width: 192/@rem;
+            height: 192/@rem;
+            position: relative;
+            margin-right: 6/@rem;
+            margin-top: 6/@rem;
+            img {
+                width: 192/@rem;
+                height: 192/@rem;
+                border-radius: 10/@rem;
+            }
+            span {
+                position: absolute;
+                top: 160/@rem;
+                left: 80/@rem;
+                padding-left: 8/@rem;
+                width: 104/@rem;
+                height: 32/@rem;
+                line-height: 32/@rem;
+                font-size: 15/@rem;
+                color: #FFFFFF;
+                background-color: #ff656a;
+                border-radius: 10/@rem;
+            }
+        }
+    }
+}
+
+// 特价促销
+// 宝贝排行
+.tjcx {
+    margin-top: 16/@rem;
+    width: 100%;
+    height: 100%;
+    .tit {
+        width: 608/@rem;
+        height: 74/@rem;
+        text-align: right;
+        margin-top: 44/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        margin-bottom: 22/@rem;
+        .title {
+            width: 415/@rem;
+            height: 74/@rem;
+            div:nth-child(1) {
+                width: 415/@rem;
+                height: 52/@rem;
+                font-size: 51/@rem;
+                .red {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #ff656a;
+                    border-radius: 29/@rem;
+                }
+                .blue {
+                    text-align: center;
+                    display: inline-block;
+                    width: 58/@rem;
+                    height: 52/@rem;
+                    color: #FFFFFF;
+                    background-color: #55b5ec;
+                    border-radius: 29/@rem;
+                }
+            }
+            div:nth-child(2) {
+                width: 415/@rem;
+                height: 14/@rem;
+            }
+            // 问题：怎么失效了 高度 不包含进去
+            div:nth-child(3) {
+                width: 415/@rem;
+                height: 8/@rem;
+                font-size: 8/@rem;
+            }
+        }
+        .more {
+            width: 193/@rem;
+            height: 74/@rem;
+            line-height: 74/@rem;
+            a {
+                display: block;
+                width: 193/@rem;
+                height: 74/@rem;
+                line-height: 74/@rem;
+            }
+        }
+    }
+    .main {
+        width: 608/@rem;
+        height: 100%;
+        margin-top: 25/@rem;
+        margin-left: 16/@rem;
+        margin-right: 16/@rem;
+        .section {
+            width: 608/@rem;
+            height: 321/@rem;
+            dl {
+                width: 608/@rem;
+                height: 321/@rem;
+                dt {
+                    float: left;
+                    width: 303/@rem;
+                    height: 321/@rem;
+                    img {
+                        width: 303/@rem;
+                        height: 304/@rem;
+                    }
+                }
+                dd {
+                    float: left;
+                    margin-left: 18/@rem;
+                    width: 287/@rem;
+                    height: 321/@rem;
+                    div:nth-child(1) {
+                        width: 90/@rem;
+                        height: 32/@rem;
+                        line-height: 32/@rem;
+                        font-size: 18/@rem;
+                        text-align: center;
+                        border-radius: 10/@rem;
+                        background-color: #81d73d;
+                        color: #FFFFFF;
+                        margin-top: 25/@rem;
+                    }
+                    div:nth-child(2) {
+                        width: 259/@rem;
+                        height: 16/@rem;
+                        line-height: 20/@rem;
+                        font-size: 16/@rem;
+                        margin-top: 40/@rem;
+                    }
+                    div:nth-child(3) {
+                        width: 259/@rem;
+                        height: 29/@rem;
+                        margin-top: 32/@rem;
+                        a:nth-child(1) {
+                            color: #ff656a;
+                        }
+                    }
+                    div:nth-child(4) {
+                        width: 200/@rem;
+                        height: 40/@rem;
+                        margin-top: 40/@rem;
+                        a {
+                            display: block;
+                            width: 200/@rem;
+                            height: 40/@rem;
+                            font-size: 17/@rem;
+                            line-height: 40/@rem;
+                            color: #FFFFFF;
+                            text-align: center;
+                            border-radius: 10/@rem;
+                            background-color: #ff656a;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+// 店铺公告
+.about {
+    width: 100%;
+    height: 100%;
+    padding-top: 32/@rem;
+    .about_img {
+        width: 608/@rem;
+        height: 159/@rem;
+        margin: 0 16/@rem;
+        text-align: center;
+        img {
+            width: 152/@rem;
+            height: 158/@rem;
+        }
+    }
+    p {
+        padding-top: 18/@rem;
+        width: 608/@rem;
+        height: 144/@rem;
+        font-size: 19/@rem;
+        line-height: 34/@rem;
+        margin: 0 16/@rem;
+        text-align: center;
+        color: #777777;
+    }
+}
+
+// 售后
+.sh {
+    width: 608/@rem;
+    height: 232/@rem;
+    margin: 0 16/@rem;
+    .l{
+        width: 192/@rem;
+        height: 232/@rem;
+        margin-right: 15/@rem;
+        background-color: #55b5ec;
+        span {
+            display: block;
+            width: 80/@rem;
+            height: 80/@rem;
+            line-height: 80/@rem;
+            text-align: center;
+            font-size: 39/@rem;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            color: #FFFFFF;
+            margin-top: 62/@rem;
+            margin-left: 54/@rem;
+        }
+        h3 {
+            margin-top: 18/@rem;
+            width: 192/@rem;
+            height: 20/@rem;
+            font-size: 20/@rem;
+            color: #FFFFFF;
+            text-align: center;
+            
+        }
+    }
+    .m {
+        width: 192/@rem;
+        height: 232/@rem;
+        margin-right: 15/@rem;
+        background-color: #ff656a;
+        span {
+            display: block;
+            width: 80/@rem;
+            height: 80/@rem;
+            line-height: 80/@rem;
+            text-align: center;
+            font-size: 39/@rem;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            color: #FFFFFF;
+            margin-top: 62/@rem;
+            margin-left: 54/@rem;
+        }
+        h3 {
+            margin-top: 18/@rem;
+            width: 192/@rem;
+            height: 20/@rem;
+            font-size: 20/@rem;
+            color: #FFFFFF;
+            text-align: center;
+            
+        }
+    }
+    .r {
+        width: 192/@rem;
+        height: 232/@rem;
+        background-color: #55b5ec;
+        span {
+            display: block;
+            width: 80/@rem;
+            height: 80/@rem;
+            line-height: 80/@rem;
+            text-align: center;
+            font-size: 39/@rem;
+            border: 1px solid #FFFFFF;
+            border-radius: 50%;
+            color: #FFFFFF;
+            margin-top: 62/@rem;
+            margin-left: 54/@rem;
+            background: url(../images/td.png) no-repeat 15/@rem 21/@rem;
+            background-size: 49/@rem 33/@rem;
+        }
+        h3 {
+            margin-top: 18/@rem;
+            width: 192/@rem;
+            height: 20/@rem;
+            font-size: 20/@rem;
+            color: #FFFFFF;
+            text-align: center;
+            
+        }
+    }
+}
