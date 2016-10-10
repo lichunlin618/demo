@@ -1231,9 +1231,6 @@ input {
 .purse-head .body .qx a i {
   font-size: 0.85rem;
 }
-.time-head {
-  background-color: #3b9bff;
-}
 .time-head .head {
   position: relative;
   height: 2.05rem;
@@ -1241,6 +1238,7 @@ input {
   font-size: 0.85rem;
   text-align: center;
   color: #ffffff;
+  background-color: #3b9bff;
 }
 .time-head .head h3 {
   height: 2.05rem;
