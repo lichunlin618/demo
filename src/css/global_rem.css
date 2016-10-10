@@ -1123,7 +1123,6 @@ input {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
   align-content: space-around;
   background-color: #db3a34;
 }
@@ -1134,5 +1133,4 @@ input {
   border-radius: 0.5rem;
   margin: 0.2rem;
   padding-left: 0.75rem;
-  padding-right: 0.75rem;
 }
