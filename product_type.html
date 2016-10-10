@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="favicon.ico" >
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			// 一比一像素的还原
+			var pixclPatio      = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixclPatio+',minimum-scale='+pixclPatio+',maximum-scale='+pixclPatio+',user-scalable=no" />');
+			
+			setRem();
+			window.addEventListener("orientationchange", setRem);
+			window.addEventListener("resize", setRem);
+			// 适配每个设备下的rem单位
+			function setRem(){
+				var html            = document.getElementsByTagName('html')[0];
+				var pageWidth       = html.getBoundingClientRect().width;
+				html.style.fontSize = pageWidth / 16 + 'px';
+			}
+			
+			
+		</script>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#3b9bff">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="src/css/global_rem.css" />
+		
+	</head>
+	<body>
+		<header>
+			<div class="head-tit">
+				商品分类
+			</div>
+			<div class="head-sear">
+				<input class="search-type" type="text" placeholder="搜索你感兴趣的商品..." />
+			</div>
+		</header>
+		<section class="header">
+			
+		</section>
+		
+		<footer class="bottom-nav-box">
+			<div id="mini_nav" class="bottom-nav">
+				<ul>
+				    <li>
+				         <a href="index.html">
+				             <span class="iconfont home"></span>
+				             <em>首页</em>
+				         </a>
+				    </li>
+				    <li>
+				         <a href="#">
+				             <span class="iconfont type"></span>
+				             <em>分类</em>
+				         </a>
+					</li>
+					<li>
+				         <a href="#">
+				             <span class="iconfont purse"></span>
+				             <em>钱包</em>
+				         </a>
+				    </li>
+				    <li>
+				         <a href="#">
+				             <span class="iconfont time"></span>
+				             <em>限时</em>
+				         </a>
+					</li>
+					<li>
+				         <a href="#">
+				             <span class="iconfont user"></span>
+				             <em>个人</em>
+				         </a>
+					</li>
+				</ul>
+			</div>
+		 </footer>
+	</body>
+</html>

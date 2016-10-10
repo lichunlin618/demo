@@ -1134,3 +1134,25 @@ input {
   border-radius: 0.5rem;
   padding-left: 0.75rem;
 }
+.head-tit {
+  height: 2.1rem;
+  font-size: 0.85rem;
+  line-height: 2.1rem;
+  text-align: center;
+  border-bottom: 1px solid #eaeaea;
+}
+.head-sear {
+  height: 1.5rem;
+  text-align: center;
+}
+.head-sear .search-type {
+  width: 15rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.6rem;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0.25rem auto;
+  border-radius: 0.15rem;
+  color: #b4b4b4;
+}
