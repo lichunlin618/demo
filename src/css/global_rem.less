@@ -1424,20 +1424,20 @@ input {
 
 // 个人
 .user-head {
+    height: 374/@rem;
     .banner {
         height: 374/@rem;
         background-color: #3b9bff;
         a {
-            display: -webkit-flex;
-            display: flex;
-            flex-direction:row;
-            justify-content: space-around;
-            align-items: center;
+            display: block;
             height: 374/@rem;
+            line-height: 374/@rem;
+            text-align: center;
             img {
                 width: 190/@rem;
                 height: 190/@rem;
                 border-radius: 50%;
+                vertical-align: middle;
             }
         }
         
@@ -1445,20 +1445,30 @@ input {
 }
 .user-container {
     .info {
+        
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
         display: flex;
         flex-direction:row;
         justify-content: space-around;
         align-items: center;
         .padd-bg {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -moz-flex: 1;
+            -ms-flex: 1;
             flex: 1;
             border-right: 5px solid #eeeeee;
             border-bottom: 5px solid #eeeeee;
             padding-bottom: 34/@rem;
+            padding-top: 28/@rem;
             .icon-box {
                 width: 90/@rem;
                 height: 148/@rem;
                 margin: 0 auto;
-                margin-top: 28/@rem;
                 div:nth-child(1) {
                     width: 90/@rem;
                     height: 90/@rem;

@@ -1332,40 +1332,51 @@ input {
   border-radius: 0.25rem;
   background-color: #ff656a;
 }
+.user-head {
+  height: 9.35rem;
+}
 .user-head .banner {
   height: 9.35rem;
   background-color: #3b9bff;
 }
 .user-head .banner a {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  display: block;
   height: 9.35rem;
+  line-height: 9.35rem;
+  text-align: center;
 }
 .user-head .banner a img {
   width: 4.75rem;
   height: 4.75rem;
   border-radius: 50%;
+  vertical-align: middle;
 }
 .user-container .info {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
 .user-container .info .padd-bg {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   border-right: 5px solid #eeeeee;
   border-bottom: 5px solid #eeeeee;
   padding-bottom: 0.85rem;
+  padding-top: 0.7rem;
 }
 .user-container .info .padd-bg .icon-box {
   width: 2.25rem;
   height: 3.7rem;
   margin: 0 auto;
-  margin-top: 0.7rem;
 }
 .user-container .info .padd-bg .icon-box div:nth-child(1) {
   width: 2.25rem;
