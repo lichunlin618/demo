@@ -1067,19 +1067,19 @@ input {
 }
 .bottom-nav-box .bottom-nav ul {
   background: #fafafa;
-  width: 100%;
+  width: 16rem;
   height: 3.1rem;
 }
 .bottom-nav-box .bottom-nav ul li {
   float: left;
-  width: 25%;
-  text-align: center;
+  width: 3.2rem;
   height: 3.1rem;
+  text-align: center;
 }
 .bottom-nav-box .bottom-nav ul li a {
   display: block;
   padding-top: 0.25rem;
-  width: 2.5rem;
+  width: 3.2rem;
   height: 3.1rem;
   margin: auto;
 }
@@ -1092,19 +1092,23 @@ input {
 }
 .bottom-nav-box .bottom-nav ul li a .home:before {
   line-height: 1.25rem;
-  content: '\e64e';
+  content: '\e601';
 }
-.bottom-nav-box .bottom-nav ul li a .shopp:before {
+.bottom-nav-box .bottom-nav ul li a .type:before {
   line-height: 1.25rem;
-  content: '\e608';
+  content: '\e606';
 }
-.bottom-nav-box .bottom-nav ul li a .wuliu:before {
+.bottom-nav-box .bottom-nav ul li a .purse:before {
   line-height: 1.25rem;
-  content: '\e647';
+  content: '\e602';
+}
+.bottom-nav-box .bottom-nav ul li a .time:before {
+  line-height: 1.25rem;
+  content: '\e603';
 }
 .bottom-nav-box .bottom-nav ul li a .user:before {
   line-height: 1.25rem;
-  content: '\e602';
+  content: '\e604';
 }
 .bottom-nav-box .bottom-nav ul li a em {
   font-style: normal;
