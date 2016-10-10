@@ -32,6 +32,9 @@ ul {
 .fl {
   float: left;
 }
+.fr {
+  float: right;
+}
 /* 处理兼容问题 */
 a {
   -webkit-tap-highlight-color: transparent;
@@ -1155,4 +1158,260 @@ input {
   margin: 0.25rem auto;
   border-radius: 0.15rem;
   color: #b4b4b4;
+}
+.purse-head {
+  height: 9.35rem;
+  background-color: #3b9bff;
+}
+.purse-head .head {
+  position: relative;
+  height: 2.05rem;
+  line-height: 2.05rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #ffffff;
+}
+.purse-head .head h3 {
+  height: 2.05rem;
+  line-height: 2.05rem;
+  text-align: center;
+}
+.purse-head .head a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1rem;
+  margin-right: 0.25rem;
+  color: #ffffff;
+}
+.purse-head .body {
+  padding-top: 2rem;
+}
+.purse-head .body dl {
+  height: 2.425rem;
+  margin: 0 1.5rem;
+}
+.purse-head .body dt {
+  margin-right: 0.5rem;
+}
+.purse-head .body dt img {
+  width: 2.3rem;
+  height: 2.3rem;
+}
+.purse-head .body dd {
+  padding-top: 0.25rem;
+}
+.purse-head .body dd a {
+  display: block;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+}
+.purse-head .body .dz {
+  height: 0.6rem;
+  font-size: 0.6rem;
+  color: #d6eaff;
+  margin-bottom: 0.25rem;
+}
+.purse-head .body .qx {
+  background-color: #FFFFFF;
+  width: 3.85rem;
+  height: 1.35rem;
+  line-height: 1.35rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+}
+.purse-head .body .qx a {
+  display: block;
+  width: 3.85rem;
+  height: 1.35rem;
+  font-size: 0.85rem;
+  color: #3b9bff;
+}
+.purse-head .body .qx a i {
+  font-size: 0.85rem;
+}
+.time-head {
+  background-color: #3b9bff;
+}
+.time-head .head {
+  position: relative;
+  height: 2.05rem;
+  line-height: 2.05rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #ffffff;
+}
+.time-head .head h3 {
+  height: 2.05rem;
+  line-height: 2.05rem;
+  text-align: center;
+}
+.time-head .head a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1rem;
+  margin-left: 0.25rem;
+  color: #ffffff;
+}
+.time-head .banner {
+  height: 5rem;
+}
+.time-head .banner img {
+  width: 100%;
+  height: 5rem;
+}
+.time-product {
+  width: 15.2rem;
+  height: 100%;
+  margin-top: 0.625rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
+}
+.time-product .section {
+  width: 15.2rem;
+  height: 8.025rem;
+}
+.time-product .section dl {
+  width: 15.2rem;
+  height: 8.025rem;
+}
+.time-product .section dl dt {
+  float: left;
+  width: 7.575rem;
+  height: 8.025rem;
+}
+.time-product .section dl dt img {
+  width: 7.575rem;
+  height: 7.6rem;
+}
+.time-product .section dl dd {
+  float: left;
+  margin-left: 0.45rem;
+  width: 7.175rem;
+  height: 8.025rem;
+}
+.time-product .section dl dd div:nth-child(1) {
+  width: 2.25rem;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.45rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  background-color: #81d73d;
+  color: #FFFFFF;
+  margin-top: 0.625rem;
+}
+.time-product .section dl dd div:nth-child(2) {
+  width: 6.475rem;
+  height: 0.4rem;
+  line-height: 0.5rem;
+  font-size: 0.4rem;
+  margin-top: 1rem;
+}
+.time-product .section dl dd div:nth-child(3) {
+  width: 6.475rem;
+  height: 0.725rem;
+  margin-top: 0.8rem;
+}
+.time-product .section dl dd div:nth-child(3) a:nth-child(1) {
+  color: #ff656a;
+}
+.time-product .section dl dd div:nth-child(4) {
+  width: 5rem;
+  height: 1rem;
+  margin-top: 1rem;
+}
+.time-product .section dl dd div:nth-child(4) a {
+  display: block;
+  width: 5rem;
+  height: 1rem;
+  font-size: 0.425rem;
+  line-height: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 0.25rem;
+  background-color: #ff656a;
+}
+.user-head .banner {
+  height: 9.35rem;
+  background-color: #3b9bff;
+}
+.user-head .banner a {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 9.35rem;
+}
+.user-head .banner a img {
+  width: 4.75rem;
+  height: 4.75rem;
+  border-radius: 50%;
+}
+.user-container .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.user-container .info .padd-bg {
+  flex: 1;
+  border-right: 5px solid #eeeeee;
+  border-bottom: 5px solid #eeeeee;
+  padding-bottom: 0.85rem;
+}
+.user-container .info .padd-bg .icon-box {
+  width: 2.25rem;
+  height: 3.7rem;
+  margin: 0 auto;
+  margin-top: 0.7rem;
+}
+.user-container .info .padd-bg .icon-box div:nth-child(1) {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  line-height: 2.25rem;
+  text-align: center;
+}
+.user-container .info .padd-bg .icon-box div:nth-child(1) i {
+  font-size: 1.15rem;
+  color: #FFFFFF;
+}
+.user-container .info .padd-bg .icon-box div:nth-child(2) {
+  margin-top: 0.9rem;
+  height: 0.55rem;
+  font-size: 0.55rem;
+}
+.user-container .info .padd-bg:last-child {
+  border-right: 0;
+}
+.user-container .color1 {
+  background-color: #02d5c0;
+}
+.user-container .color2 {
+  background-color: #5095f1;
+}
+.user-container .color3 {
+  background-color: #50c9f1;
+}
+.user-container .color4 {
+  background-color: #8cd946;
+}
+.user-container .color5 {
+  background-color: #ffd132;
+}
+.user-container .color6 {
+  background-color: #ffa124;
+}
+.user-container .color7 {
+  background-color: #c5d086;
+}
+.user-container .color8 {
+  background-color: #f48093;
+}
+.user-container .color9 {
+  background-color: #bfd34d;
 }

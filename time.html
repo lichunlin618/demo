@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" href="favicon.ico" >
+		<meta charset="UTF-8">
+		<title>热卖商品</title>
+		<script>
+			// 一比一像素的还原
+			var pixclPatio      = 1 / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="width=device-width,initial-scale='+pixclPatio+',minimum-scale='+pixclPatio+',maximum-scale='+pixclPatio+',user-scalable=no" />');
+			
+			setRem();
+			window.addEventListener("orientationchange", setRem);
+			window.addEventListener("resize", setRem);
+			// 适配每个设备下的rem单位
+			function setRem(){
+				var html            = document.getElementsByTagName('html')[0];
+				var pageWidth       = html.getBoundingClientRect().width;
+				html.style.fontSize = pageWidth / 16 + 'px';
+			}
+			
+			
+		</script>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#3b9bff">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="src/css/global_rem.css" />
+		
+	</head>
+	<body>
+		<header class="time-head">
+			<div class="head">
+				<h3 >热卖商品</h3>
+				<a href="#" class="iconfont fl">&#xe601;</a>
+			</div>
+			<div class="banner">
+				<a href="#">
+					<img src="src/images/hot1.jpg" />
+				</a>
+			</div>
+		</header>
+		<section class="time-product">
+			<div class="section">
+				<dl>
+					<dt>
+						<img src="src/images/list1.jpg" />
+					</dt>
+					<dd>
+						<div>3.0折</div>
+						<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+						<div>
+							<a href="#">￥168.00</a>
+							<a href="#">已售:8</a>
+						</div>
+						<div>
+							<a href="#">
+								立即购买
+							</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="section">
+				<dl>
+					<dt>
+						<img src="src/images/list2.jpg" />
+					</dt>
+					<dd>
+						<div>3.0折</div>
+						<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+						<div>
+							<a href="#">￥168.00</a>
+							<a href="#">已售:8</a>
+						</div>
+						<div>
+							<a href="#">
+								立即购买
+							</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="section">
+				<dl>
+					<dt>
+						<img src="src/images/list3.jpg" />
+					</dt>
+					<dd>
+						<div>3.0折</div>
+						<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+						<div>
+							<a href="#">￥168.00</a>
+							<a href="#">已售:8</a>
+						</div>
+						<div>
+							<a href="#">
+								立即购买
+							</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="section">
+				<dl>
+					<dt>
+						<img src="src/images/list1.jpg" />
+					</dt>
+					<dd>
+						<div>3.0折</div>
+						<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+						<div>
+							<a href="#">￥168.00</a>
+							<a href="#">已售:8</a>
+						</div>
+						<div>
+							<a href="#">
+								立即购买
+							</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="section">
+				<dl>
+					<dt>
+						<img src="src/images/list2.jpg" />
+					</dt>
+					<dd>
+						<div>3.0折</div>
+						<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+						<div>
+							<a href="#">￥168.00</a>
+							<a href="#">已售:8</a>
+						</div>
+						<div>
+							<a href="#">
+								立即购买
+							</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="section">
+				<dl>
+					<dt>
+						<img src="src/images/list3.jpg" />
+					</dt>
+					<dd>
+						<div>3.0折</div>
+						<div>创意家居生活用品小百货 居家日 用装饰品 生日礼品实用新奇特别</div>
+						<div>
+							<a href="#">￥168.00</a>
+							<a href="#">已售:8</a>
+						</div>
+						<div>
+							<a href="#">
+								立即购买
+							</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</section>
+		
+		<footer class="bottom-nav-box">
+			<div id="mini_nav" class="bottom-nav">
+				<ul>
+				    <li>
+				         <a href="index.html">
+				             <span class="iconfont home"></span>
+				             <em>首页</em>
+				         </a>
+				    </li>
+				    <li>
+				         <a href="product_type.html">
+				             <span class="iconfont type"></span>
+				             <em>分类</em>
+				         </a>
+					</li>
+					<li>
+				         <a href="purse.html">
+				             <span class="iconfont purse"></span>
+				             <em>钱包</em>
+				         </a>
+				    </li>
+				    <li>
+				         <a href="time.html">
+				             <span class="iconfont time"></span>
+				             <em>热卖</em>
+				         </a>
+					</li>
+					<li>
+				         <a href="user.html">
+				             <span class="iconfont user"></span>
+				             <em>个人</em>
+				         </a>
+					</li>
+				</ul>
+			</div>
+		 </footer>
+	</body>
+</html>
